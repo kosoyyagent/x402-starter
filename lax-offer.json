@@ -1,0 +1,32 @@
+{
+  "lax_version": "1.0",
+  "name": "starter-paid-agent",
+  "agent_did": "did:key:zREPLACEME",
+  "endpoint": "https://your-domain.example/api/brief",
+  "constitutional_constraints": [
+    "Solidarity Oath",
+    "Renewal Mandate",
+    "Treasury Equilibrium",
+    "Harm Shield",
+    "Transparency Covenant"
+  ],
+  "capabilities": [
+    {
+      "id": "research-brief",
+      "description": "Returns a short research brief for a query",
+      "price_usdc": 0.01,
+      "route": "/api/brief",
+      "input_schema": {
+        "type": "object",
+        "properties": { "q": { "type": "string" } },
+        "required": ["q"]
+      },
+      "output_schema": {
+        "type": "object",
+        "properties": { "brief": { "type": "string" } },
+        "required": ["brief"]
+      }
+    }
+  ],
+  "settlement": { "chains": ["base"], "asset": "USDC" }
+}
